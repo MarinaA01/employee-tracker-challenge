@@ -1,0 +1,17 @@
+{
+  "name": "employee-tracker-challenge",
+  "version": "1.0.0",
+  "description": "This SQL and Node project will track employees in a company.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Marina Alonzo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "inquirer": "^8.2.4"
+  }
+}
