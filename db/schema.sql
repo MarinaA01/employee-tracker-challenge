@@ -3,6 +3,8 @@ CREATE DATABASE company_db;
 
 USE company_db;
 
+-- AskBCS on Slack provided assistance with syntax errors
+
 CREATE TABLE department (
     id INT PRIMARY KEY,
     name VARCHAR(30)

@@ -64,7 +64,58 @@ return inquirer
             viewAllDepartments();
         } else if(answers.choices === "View All Roles") {
             viewAllRoles();
-        }
+        } else if(answers.choices === "Add Employee") {
+            inquirer
+            .prompt([
+                {
+                    type: "input",
+                    name: "first_name",
+                    message: "Enter the employee's first name:"
+                },
+                {
+                    type: "input",
+                    name: "last_name",
+                    message: "Enter the employee's last name:"
+                },
+                {
+                    type: "input",
+                    name: "role_id",
+                    message: "Enter the employee's role ID:"
+                },
+                {
+                    type: "input",
+                    name: "manager_id",
+                    message: "Enter the employee's manager ID:"
+                }
+            ])
+        } else if(answers.choices === "Add Department") {
+            inquirer
+            .prompt([
+                {
+                    type: "input",
+                    name: "name",
+                    message: "Enter the department's name:"
+                }
+            ])
+        } else if(answers.choices === "Add Role") {
+            inquirer
+            .prompt([
+                {
+                    type: "input",
+                    name: "title",
+                    message: "Enter the role's title:"
+                },
+                {
+                    type: "input",
+                    name: "salary",
+                    message: "Enter the role's salary:"
+                },
+                {
+                    type: "input",
+                    name: "department_id",
+                    message: "Enter the role's department ID:"
+                }
+            ])
     });
 
 app.use((req, res) => {
