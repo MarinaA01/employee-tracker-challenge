@@ -52,6 +52,7 @@ return inquirer
                 "Add Employee",
                 "Add Department",
                 "Add Role",
+                "Update Employee Role",
                 "Quit"
             ]
         }
@@ -115,11 +116,25 @@ return inquirer
                     message: "Enter the role's department ID:"
                 }
             ])
+        } else if(answers.choices === "Update Employee Role") {
+            inquirer
+            .prompt([
+                {
+                    type: "input",
+                    name: "employee_id",
+                    message: "Enter the employee's ID:"
+                },
+                {
+                    type: "input",
+                    name: "role_id",
+                    message: "Enter the employee's new role ID:"
+                }
+            ])
         } else if(answers.choices === "Quit") {
             return;
         }
     });
-    
+
 
 app.use((req, res) => {
     res.status(404).end();
