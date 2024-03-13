@@ -115,7 +115,11 @@ return inquirer
                     message: "Enter the role's department ID:"
                 }
             ])
-    } 
+        } else if(answers.choices === "Quit") {
+            return;
+        }
+    });
+    
 
 app.use((req, res) => {
     res.status(404).end();
@@ -124,3 +128,4 @@ app.use((req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
