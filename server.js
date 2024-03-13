@@ -52,7 +52,6 @@ return inquirer
                 "Add Employee",
                 "Add Department",
                 "Add Role",
-                "Update Employee Role",
                 "Quit"
             ]
         }
@@ -116,7 +115,7 @@ return inquirer
                     message: "Enter the role's department ID:"
                 }
             ])
-    });
+    } 
 
 app.use((req, res) => {
     res.status(404).end();
