@@ -88,6 +88,12 @@ return inquirer
                     message: "Enter the employee's manager ID:"
                 }
             ])
+            .then((answers) => {
+                db.query("INSERT INTO employee SET ?", answers, (err, res) => {
+                    if(err) throw err;
+                    console.log("Employee added!");
+                });
+            });
         } else if(answers.choices === "Add Department") {
             inquirer
             .prompt([
