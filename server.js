@@ -121,7 +121,13 @@ return inquirer
                     name: "department_id",
                     message: "Enter the role's department ID:"
                 }
-            ])
+            ]) 
+            .then((answers) => {
+                db.query("INSERT INTO role SET ?", answers, (err, res) => {
+                    if(err) throw err;
+                    console.log("Role added!");
+                });
+            });
         } else if(answers.choices === "Update Employee Role") {
             inquirer
             .prompt([
@@ -136,8 +142,16 @@ return inquirer
                     message: "Enter the employee's new role ID:"
                 }
             ])
+            .then((answers) => {
+                db.query("UPDATE employee SET role_id = ? WHERE id = ?", [answers.role_id, answers.employee_id], (err, res) => {
+                    if(err) throw err;
+                    console.log("Employee role updated!");
+                });
+            });
         } else if(answers.choices === "Quit") {
             return;
+        } else {
+            console.log("Invalid input. Please try again.");
         }
     });
 
