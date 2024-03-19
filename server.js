@@ -39,7 +39,8 @@ const viewAllRoles = () => {
 
 // https://javascript.plainenglish.io/how-to-inquirer-js-c10a4e05ef1f
 
-return inquirer
+function prompt() {
+    return inquirer
     .prompt([
         {
             type: "list",
@@ -154,6 +155,9 @@ return inquirer
             console.log("Invalid input. Please try again.");
         }
     });
+}
+
+prompt();
 
 
 app.use((req, res) => {
