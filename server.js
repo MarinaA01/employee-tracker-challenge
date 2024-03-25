@@ -154,6 +154,7 @@ function prompt() {
         } else {
             console.log("Invalid input. Please try again.");
         }
+        prompt();
     });
 }
 
